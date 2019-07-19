@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio</title>
+    <style>
+    body{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        
+        justify-content: center;
+    }
+    .bola{
+        
+        height: 300px;
+        width: 300px;
+        border-radius:50%;
+        background-color: #54C2E9; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        animation-name: pulso;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.04,.98,.98,.04);
+        animation-play-state:running;
+        
+        /* animation-direction: alternate; */
+    }
+    .animacion{
+        animation-name: pulso;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.04,.98,.98,.04);
+    }
+    .container:hover.bola{
+        
+    }
+    @keyframes pulso{
+        0%{
+            transform: scale(1);
+            
+        }
+        50%{
+            transform: scale(1.3);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+    #boton{
+        margin-top: 200px;
+        width:240px;
+        height: 40px;
+        background: transparent;
+        color: #54C2E9; 
+        border: 2px solid #54C2E9; 
+        border-radius: 6px;
+        transition-duration: 0s;
+        text-decoration: none;
+      text-transform: uppercase;
+    }
+    #boton:hover{
+        background-color: #54C2E9; 
+      color: white;
+      cursor: pointer;
+     
+    }
+   
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+            <div class="container">
+                    <div class="bola animacion" id="bola">Hola Mundo</div>
+            </div>
+            <button id="boton">Animar o detener</button>
+    </div>
+    
+<script>
+  
+
+console.log (this.animacion);
+boton.addEventListener('click', (event)=>{
+    // console.log(event);
+    var $bola = document.getElementById ('bola');
+    if($bola.style.animationPlayState == 'paused'){
+    $bola.style.animationPlayState='running'
+    
+    }
+    else{
+        $bola.style.animationPlayState='paused'
+    }
+    // $bola.classList.remove("animacion");
+    // (this.$bola.getAnimations).remove();
+})
+
+
+</script>
+</body>
+</html>
